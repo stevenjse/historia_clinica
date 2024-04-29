@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Clínica</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+<header class="bg-primary text-white text-center py-4">
+    <h1>Historia Clínica</h1>
+</header>
+<main class="container mt-4">
+    <div class="row">
+        <div class="col-lg-2">
+            <img id="profile-photo" src="img/foto.png" alt="Foto de perfil" class="img-fluid">
+            <div id="photo-error" class="invalid-feedback">Por favor, sube una foto.</div>
+            <div class="mt-2">
+                <input id="photo-upload" class="form-control visually-hidden" type="file" accept="image/*" required>
+                <label for="photo-upload" class="btn btn-primary">Subir foto</label>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div id="info">
+                <h2 class="mb-4">Datos Personales</h2>
+                <form id="personal-info-form">
+                    <div class="form-group">
+                        <label for="name">Nombre: <span class="text-danger">*</span></label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección: <span class="text-danger">*</span></label>
+                        <input type="text" id="address" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono: <span class="text-danger">*</span></label>
+                        <input type="tel" id="phone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Fecha de Nacimiento: <span class="text-danger">*</span></label>
+                        <input type="datetime-local" id="birthdate" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País: <span class="text-danger">*</span></label>
+                        <select id="country" class="form-control" required>
+                            <option value="">Seleccionar país</option>
+                            <option value="1">País 1</option>
+                            <option value="2">País 2</option>
+                            <option value="3">País 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Ciudad de Nacimiento: <span class="text-danger">*</span></label>
+                        <select id="city" class="form-control" required>
+                            <option value="">Seleccionar ciudad</option>
+                            <option value="city1" class="country1">Ciudad 1</option>
+                            <option value="city2" class="country1">Ciudad 2</option>
+                            <option value="city3" class="country2">Ciudad 3</option>
+                            <option value="city4" class="country2">Ciudad 4</option>
+                            <option value="city5" class="country3">Ciudad 5</option>
+                            <option value="city6" class="country3">Ciudad 6</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <div id="confirmation-message" class="alert alert-success mt-3" style="display: none;">Los datos se han guardado correctamente.</div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-5 mt-5">
+            <h4>Hijos:</h4>
+            <table class="table table-bordered table-hover">
+                <thead class="table-light">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody id="children-table">
+                <!-- Aquí se agregarán las filas de hijos dinámicamente -->
+                </tbody>
+            </table>
+            <button id="add-child-btn" type="button" class="btn btn-primary">Agregar hijo</button>
+        </div>
+    </div>
+    <hr>
+    <h2 class="mb-4">Historial de Pacientes</h2>
+    <select id="patient-select" class="form-select">
+        <option value="">Seleccionar paciente</option>
+    </select>
+    <div id="display-info"></div>
+</main>
+<footer class="bg-light text-center py-4">
+    <p>&copy; 2024 Historia Clínica</p>
+</footer>
+</body>
+</html>
